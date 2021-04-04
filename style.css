@@ -13,7 +13,7 @@
 .images {
     width: 100%;
 }
-.header .more_inf {
+.header.more_inf {
     font-family: fantasy, cursive;
 }
 
@@ -45,7 +45,8 @@
     list-style: none;
 }
 
-input,button{
+input,
+button{
     outline: none;
 }
 
