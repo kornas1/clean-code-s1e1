@@ -117,15 +117,20 @@ input#new-task {
 .element > input[type="checkbox"] {
     margin: 0 10px;
 }
-.element > label {
-    padding-left: 10px;
-    box-sizing: border-box;
-    font-size: 18px;
-    width: 226px;
+
+.incomplete-task__message,
+.completed-task__message {
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 226px;
 }
-.element >    input[type="text"] {
-    width: 226px;
+
+.incomplete-task__new-message,
+.completed-task__new-message {
+  width: 226px;
 }
+
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
@@ -136,7 +141,7 @@ button.delete img:hover {
 }
 
 /* Completed */
-.list #completed-tasks label {
+.completed-task__message {
     text-decoration: line-through;
     color: #888;
 }
