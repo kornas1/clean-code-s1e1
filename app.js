@@ -84,9 +84,11 @@ var editTask=function(){
     var listItem=this.parentNode;
 
     var editInput=listItem.querySelector('input[type=text]');
+    editInput.classList.add('incomplete-task__new-message')
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
     var containsClass=listItem.classList.contains("edit-mode");
+  
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -115,12 +117,13 @@ var deleteTask=function(){
 
 }
 
-
 //Mark task completed
 var taskCompleted=function(){
     console.log("Complete Task...");
 
     //Append the task list item to the #completed-tasks
+    this.parentNode.querySelector("label").classList.add('completed-task__message')
+    this.parentNode.querySelector("label").classList.remove('incomplete-task__message')
     var listItem=this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
@@ -132,7 +135,9 @@ var taskIncomplete=function(){
     console.log("Incomplete Task...");
 //Mark task as incomplete.
     //When the checkbox is unchecked
-    //Append the task list item to the #incomplete-tasks.
+    //Append the task list item to the #incompleteTasks.
+    this.parentNode.querySelector("label").classList.remove('completed-task__message')
+    this.parentNode.querySelector("label").classList.add('incomplete-task__message')
     var listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
@@ -143,6 +148,7 @@ var taskIncomplete=function(){
 var ajaxRequest=function(){
     console.log("AJAX Request");
 }
+
 
 //The glue to hold it all together.
 
